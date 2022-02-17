@@ -22,8 +22,7 @@ jobs:
       run: chmod +x gradlew
     - name: test and packege with gradle
       run: ./gradlew build
-    - name: show current directory
-      run: ls -la   
+   
     
 #   test:
 #     runs-on: ubuntu-latest
