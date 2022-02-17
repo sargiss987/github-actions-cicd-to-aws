@@ -25,6 +25,6 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: check gradle wrapper version
-      run: ./gradle --version
+    - name: show current directory
+      run: ls -la
       
