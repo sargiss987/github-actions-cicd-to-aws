@@ -23,7 +23,7 @@ jobs:
     - name: show current directory
       run: ls -la 
     - name: test with gradle
-      run: gradle test
+      run: gradlew test
     
 #   test:
 #     runs-on: ubuntu-latest
