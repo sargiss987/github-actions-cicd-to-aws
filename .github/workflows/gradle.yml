@@ -21,7 +21,9 @@ jobs:
     - name: current directory
       run: pwd
     - name: show current directory
-      run: ls -la   
+      run: ls -la 
+    - name: test with gradle
+      run: gradle test
     
 #   test:
 #     runs-on: ubuntu-latest
