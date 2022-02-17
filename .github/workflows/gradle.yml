@@ -20,6 +20,16 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: build project with gradle build task
-      run: pwd
+    
+  test: 
+    
+    runs-on: ubuntu-latest
+    needs: [build]
+    
+    steps:
+    -name : current directory
+    run: pwd
+    
+    -name : test with gradle
+    run: ./gradlew test
       
