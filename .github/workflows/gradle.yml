@@ -18,14 +18,12 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: current directory
-      run: pwd
-    - name: show current directory
-      run: ls -la
     - name: make gradlew exe
       run: chmod +x gradlew
-    - name: test with gradle
-      run: ./gradlew test
+    - name: test and packege with gradle
+      run: ./gradlew build
+    - name: show current directory
+      run: ls -la   
     
 #   test:
 #     runs-on: ubuntu-latest
