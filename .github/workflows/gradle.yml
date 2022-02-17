@@ -26,6 +26,6 @@ jobs:
     steps:
     - name: current directory
       run: pwd
-    - name: test with gradle
-      run: ./gradlew test
+    - name: show current directory
+      run: ls -la
       
