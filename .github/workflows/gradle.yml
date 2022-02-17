@@ -21,9 +21,8 @@ jobs:
     - name: make gradlew exe
       run: chmod +x gradlew
     - name: test and packege with gradle
-      run: ./gradlew bootRun
-    - name: show current directory
-      run: ls -la   
+      run: ./gradlew build
+   
     
 #   test:
 #     runs-on: ubuntu-latest
