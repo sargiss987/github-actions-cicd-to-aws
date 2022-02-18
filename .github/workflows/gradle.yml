@@ -1,5 +1,11 @@
 
 name: Java CI with Gradle
+env: 
+  EB_PACKAGE_S3_BUCKET_NAME : "spring-boot-application-packages"
+  EB_APLICATION_NAME        : "MyApp"
+  EB_ENVIORNMENT_NAME       : "Myapp-env"
+  AWS_REGION_NAME           : "eu-north-1"
+  
 
 on:
   push:
@@ -22,6 +28,8 @@ jobs:
       run: chmod +x gradlew
     - name: test and packege with gradle
       run: ./gradlew build
+    - name: our jar
+      run: cd src
    
     
 #   test:
