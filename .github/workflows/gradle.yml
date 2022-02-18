@@ -29,7 +29,9 @@ jobs:
     - name: test and packege with gradle
       run: ./gradlew bootJar
     - name: our jar
-      run: cd build/libs
+      run: |
+       cd build/libs
+       ls
 
    
     
