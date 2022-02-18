@@ -54,7 +54,7 @@ jobs:
           aws-secret-access-key : ${{ secrets.MY_AWS_SECRET_KEY }}
           aws-region            : ${{ env.AWS_REGION_NAME }}
       - name: investigation
-        run: aws --help
+        run: aws help
 #       - name: Create new ElasticBeanstalk application version 
 #         run: |
 #           aws elasticbeanstalk create-application-version \
