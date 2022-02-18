@@ -5,6 +5,7 @@ env:
   EB_APLICATION_NAME        : "MyApp"
   EB_ENVIORNMENT_NAME       : "Myapp-env"
   AWS_REGION_NAME           : "eu-north-1"
+  DEPLOY_PACKAGE_NAME       : "github-actions-cicd-to-aws-0.0.1-SNAPSHOT.jar"
   
 
 on:
@@ -32,6 +33,16 @@ jobs:
       run: |
        cd build/libs
        ls
+    - name: Config AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id     : ${{ secrets.MY_AWS_ACCESS_KEY }}
+        aws-secret-access-key : ${{ secrets.MY_AWS_SECRET_KEY }}
+        aws-region            : ${{ env.AWS_REGION_NAME }}
+    - name: Copy deplotment package into S3 bucket
+      run : aws s3 cp ${{ env.DEPLOY_PACKAGE_NAME }} s3://${{ env.EB_PACKAGE_S3_BUCKET_NAME}}/
+    - name: print massage about CI/CD happy end
+      run: echo "CI/CD pipline finished successfuly
 
    
     
