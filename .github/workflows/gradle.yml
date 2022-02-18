@@ -15,7 +15,7 @@ on:
 
 jobs:
   build:
-    runs-on: ls -la
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -27,9 +27,10 @@ jobs:
     - name: make gradlew exe
       run: chmod +x gradlew
     - name: test and packege with gradle
-      run: ./gradlew build
+      run: ./gradlew bootJar
     - name: our jar
-      run: cd src
+      run: cd build/libs
+
    
     
 #   test:
