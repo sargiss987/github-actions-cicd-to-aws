@@ -64,9 +64,7 @@ jobs:
           
         
       - name : Deploy new ElasticBeanstalk application version
-        run: aws elasticbeanstalk update-environment \
-             --environment-name ${{ env.EB_ENVIORNMENT_NAME }} \
-             --version-label "Ver-${{ github.sha }}"
+        run: aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIORNMENT_NAME }} --version-label "Ver-${{ github.sha }}"
       - name: print massage about CD happy end
         run: echo "CD pipline finished successfuly"
     
